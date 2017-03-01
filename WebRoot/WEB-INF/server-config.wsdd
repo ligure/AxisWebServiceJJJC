@@ -1,0 +1,19 @@
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" >
+  <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper" />  
+  <transport name="http">     
+    <requestFlow>     
+      <handler type="URLMapper"/>     
+    </requestFlow>     
+  </transport>
+  
+  <service name="JszhService" provider="java:RPC" style="wrapped" use="literal" >
+    <parameter name="className" value="com.dc.jjjc.ws.server.JszhService"/>
+    <parameter name="allowedMethods" value="*"/>
+  </service>
+  
+  <service name="xxxxService" provider="java:RPC" >
+    <parameter name="className" value="com.dc.jjjc.ws.server.XxxxService"/>
+    <parameter name="allowedMethods" value="*"/>
+  </service>
+  
+</deployment>
